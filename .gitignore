@@ -1,0 +1,7 @@
+.vscode
+.git
+build
+isodir
+*.iso
+*.bin
+*.img
