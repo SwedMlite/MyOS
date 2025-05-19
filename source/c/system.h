@@ -16,6 +16,7 @@ struct regs
 extern void *memcpy(void *dest, const void *src, size_t count);
 extern void *memset(void *dest, char val, size_t count);
 extern unsigned short *memsetw(unsigned short *dest, unsigned short val, size_t count);
+extern int memcmp(const void *str1, const void *str2, size_t count);
 extern size_t strlen(const char *str);
 extern int strcmp(const char *str1, const char *str2);
 extern char *strcpy(char *dst, const char *src);
@@ -71,6 +72,7 @@ extern char command_buffer[COMMAND_BUFFER_SIZE];
 extern int command_buffer_pos;
 
 extern void process_command(char *input);
+extern void handle_mount(char *args);
 
 #include "fat.h"
 extern Fat* mounted_fat;

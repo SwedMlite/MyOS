@@ -3,7 +3,7 @@ AS          	  := nasm
 LD          	  := ld
 OBJCOPY     	  := objcopy
 
-CFLAGS      	  := -m32 -ffreestanding -c -g -fno-pie -fno-pic -Wall
+CFLAGS      	  := -m32 -ffreestanding -c -g -fno-pie -fno-pic -fno-stack-protector -O2 -Wall
 ASFLAGS     	  := -f elf32
 LDFLAGS     	  := -T source/ld/link.ld -m elf_i386
 

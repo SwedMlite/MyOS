@@ -19,6 +19,12 @@ sudo apt update
 sudo apt install gcc-multilib nasm grub-pc-bin xorriso qemu-system-x86
 ```
 
+On Arch:
+```bash
+sudo pacman -S gcc-multilib nasm xorriso mtools qemu
+(Select qemu-full while installing)
+```
+
 ## Build and Run
 
 To build the kernel and create a bootable ISO:

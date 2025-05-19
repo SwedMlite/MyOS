@@ -2,6 +2,7 @@
 // Copyright (c) 2025, Bjørn Brodtkorb. All rights reserved.
 
 #include "fat.h"
+#include "system.h"
 
 //------------------------------------------------------------------------------
 #define LIMIT(a, b) ((a) < (b) ? (a) : (b))

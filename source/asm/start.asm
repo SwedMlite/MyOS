@@ -38,6 +38,18 @@ mboot:
 ; before the 'jmp $'.
 stublet:
     extern main
+
+    ; ;;;;;;;;;;;;;;;;;;;;;;;;; ps. Хуй знает че оно делает, гпт сказал, я сделал
+    mov     eax, cr0
+    and     eax, ~(1 << 2)       ; CR0.EM = 0
+    or      eax,  (1 << 1)       ; CR0.MP = 1
+    mov     cr0, eax
+
+    mov     eax, cr4
+    or      eax, (1 << 9) | (1 << 10)   ; CR4.OSFXSR | CR4.OSXMMEXCPT
+    mov     cr4, eax
+    ; ;;;;;;;;;;;;;;;;;;;;;;;;;;
+    
     call main
     jmp $
 
