@@ -39,16 +39,4 @@ To clean build artifacts:
 make clean
 ```
 
-## File Structure
-
-```
-source/
-  ├── asm/        # Assembly source files
-  ├── c/          # C source files
-  └── ld/         # Linker script
-build/            # Build output (.o, .bin)
-isodir/           # ISO image layout
-Makefile
-```
-
 ---
