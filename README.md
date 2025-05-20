@@ -22,8 +22,8 @@ sudo apt install gcc-multilib nasm grub-pc-bin xorriso qemu-system-x86
 On Arch:
 ```bash
 sudo pacman -S gcc-multilib nasm xorriso mtools qemu
-(Select qemu-full while installing)
 ```
+> Note: select qemu-full while installing
 
 ## Build and Run
 
