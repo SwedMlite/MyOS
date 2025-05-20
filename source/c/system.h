@@ -62,6 +62,20 @@ extern void timer_handler(struct regs *r);
 extern void keyboard_install();
 extern void keyboard_handler(struct regs *r);
 
+/* RTC.C */
+extern void rtc_install();
+extern void rtc_enable_interrupt();
+extern void rtc_disable_interrupt();
+extern void rtc_set_rate(unsigned char rate);
+extern void rtc_handler(struct regs *r);
+extern unsigned char rtc_get_second();
+extern unsigned char rtc_get_minute();
+extern unsigned char rtc_get_hour();
+extern unsigned char rtc_get_day();
+extern unsigned char rtc_get_month();
+extern unsigned char rtc_get_year();
+extern unsigned int rtc_ticks;
+
 /* COMMANDS.C */
 #define COMMAND_BUFFER_SIZE 256
 #define PATH_MAX_LEN 256

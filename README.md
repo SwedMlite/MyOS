@@ -9,25 +9,26 @@ Install the following tools:
 * `gcc` (with multilib support)
 * `nasm`
 * `ld`
-* `grub-mkrescue`
+* `xorriso`
+* `git` (to fetch Limine bootloader)
 * `qemu` (to run the OS)
 
 On Ubuntu/Debian:
 
 ```bash
 sudo apt update
-sudo apt install gcc-multilib nasm grub-pc-bin xorriso qemu-system-x86
+sudo apt install gcc-multilib nasm xorriso git qemu-system-x86
 ```
 
 On Arch:
 ```bash
-sudo pacman -S gcc-multilib nasm xorriso mtools qemu
+sudo pacman -S gcc-multilib nasm xorriso git qemu
 ```
 > Note: select qemu-full while installing
 
 ## Build and Run
 
-To build the kernel and create a bootable ISO:
+To build the kernel and create a bootable ISO with Limine bootloader:
 
 ```bash
 make

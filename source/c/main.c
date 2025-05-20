@@ -152,6 +152,16 @@ void check_and_process_input()
     }
 }
 
+void fat_get_timestamp(Timestamp* ts)
+{
+  ts->day   = rtc_get_day();
+  ts->month = rtc_get_month();
+  ts->year  = rtc_get_year();
+  ts->hour  = rtc_get_hour();
+  ts->min   = rtc_get_minute();
+  ts->sec   = rtc_get_second();
+}
+
 void main()
 {
     gdt_install();
@@ -161,6 +171,7 @@ void main()
     init_video();
     timer_install();
     keyboard_install();
+    rtc_install();
 
     memset(command_buffer, 0, COMMAND_BUFFER_SIZE);
 
