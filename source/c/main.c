@@ -51,19 +51,20 @@ void uitoa(unsigned int value, char *buf)
 {
     char tmp[12];
     int i = 0, j;
+
     if (value == 0)
     {
         buf[i++] = '0';
+        buf[i] = '\0';
         return;
     }
-    else
+
+    while (value > 0)
     {
-        while (value > 0)
-        {
-            tmp[i++] = '0' + (value % 10);
-            value /= 10;
-        }
+        tmp[i++] = '0' + (value % 10);
+        value /= 10;
     }
+
     for (j = 0; j < i; ++j)
     {
         buf[j] = tmp[i - j - 1];
