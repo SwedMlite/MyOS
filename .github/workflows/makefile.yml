@@ -1,0 +1,29 @@
+name: MyOS CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y gcc-multilib nasm grub-pc-bin xorriso qemu-system-x86
+
+    - name: Build kernel and ISO
+      run: make
+
+    - name: Run in QEMU
+      run: make run
+      continue-on-error: true  # QEMU may exit with non-zero code, but we want to continue
+
+    - name: Clean build artifacts
+      run: make clean
