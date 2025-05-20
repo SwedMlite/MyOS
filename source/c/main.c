@@ -54,6 +54,7 @@ void uitoa(unsigned int value, char *buf)
     if (value == 0)
     {
         buf[i++] = '0';
+        return;
     }
     else
     {
